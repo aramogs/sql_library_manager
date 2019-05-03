@@ -1,0 +1,30 @@
+{
+  "name": "treehouse-project-8",
+  "version": "1.0.0",
+  "description": "SQL library",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MailboxArsonist/Treehouse-Project-8.git"
+  },
+  "author": "Matthew Dodd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MailboxArsonist/Treehouse-Project-8/issues"
+  },
+  "homepage": "https://github.com/MailboxArsonist/Treehouse-Project-8#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "sequelize": "^4.42.0",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}

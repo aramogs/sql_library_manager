@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    form(action='/books/' + book.dataValues.id method='POST', class='update-form')
+        h1 Update Book
+        if(err)
+            h2.error An error occured!
+            ul.error
+                each error in err
+                    li=error.message
+        p
+            label(for='title') Title
+            input#title(name='title', type='text', value=book.dataValues.title)
+        p
+            label(for='author') Author
+            input#author(name='author', type='text', value=book.dataValues.author)
+        p
+            label(for='genre') Genre
+            input#genre(name='genre', type='text', value=book.dataValues.genre)
+        p
+            label(for='year') Year
+            input#year(name='year', type='text', value=book.dataValues.year)
+        
+    div(id='updateBookDiv')   
+            
+        form(method='post', action='/books/' + book.dataValues.id + '/delete', onsubmit="return confirm('Do you really want to delete this book?');")
+            input(type='submit', value='Update Book', id='update')
+            a.button(href='/books', id='cancel') Cancel
+            input(type='submit', value='Delete Book', id='delete')
+
+    
