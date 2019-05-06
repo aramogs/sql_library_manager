@@ -6,7 +6,6 @@ const Sequelize = require('sequelize')
 const Op = Sequelize.Op;
 
 
-//route for /books, will show all books
 router.get('/', (req, res) => {
     Books.findAll()
       .then(books => {
@@ -14,11 +13,8 @@ router.get('/', (req, res) => {
       })
       .catch(err => console.log(err))
 });
-
-//route for new book
+//Calling view new-book 
 router.get('/new', (req, res) => res.render('new-book'));
-
-//post route to add book to db
 router.post('/new', (req, res) => {
     let {title, author, genre, year} = req.body;
     Books.create({
@@ -37,10 +33,9 @@ router.post('/new', (req, res) => {
         })
         .catch(err => console.log(err))
 });
-
+//Calling search view
 router.get('/search', (req, res) => {
     const { term } = req.query;
-    // term = term.toLowerCase();
     Books.findAll({where: {[Op.or]: [
         {
             title: {[Op.like] : '%' + term + '%'}
@@ -60,8 +55,7 @@ router.get('/search', (req, res) => {
         })
         .catch(err => console.log(err));
 });
-
-//route to update book
+//Calling update view
 router.get('/:id', (req, res) => {
     Books.findByPk(req.params.id)
       .then(book => {
@@ -70,7 +64,6 @@ router.get('/:id', (req, res) => {
       .catch(err => console.log(err))
 });
 
-//post route to update database
 router.post('/:id', (req, res) => {
     Books.findById(req.params.id)
       .then(Book => {
@@ -92,8 +85,7 @@ router.post('/:id', (req, res) => {
       })
       .catch(err => console.log(err))
 });
-
-//route to delete
+//Calling error view
 router.post('/:id/delete', (req, res) => {
     Books.findById(req.params.id)
       .then(Book => {

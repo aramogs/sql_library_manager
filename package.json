@@ -8,15 +8,10 @@
     "dev": "nodemon app.js"
   },
   "repository": {
-    "type": "",
-    "url": ""
+    "type": ""
   },
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
